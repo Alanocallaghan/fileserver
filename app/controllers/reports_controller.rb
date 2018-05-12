@@ -1,10 +1,10 @@
 class ReportsController < ApplicationController
   protect_from_forgery :except => [:link]
 
-  def show
-    # render plain: params[:project].inspect
-    redirect_to("/#{params[:project]}/#{params[:file]}")
-  end
+  # def show
+  #   # render plain: params[:project].inspect
+  #   redirect_to("/#{params[:project]}/#{params[:file]}")
+  # end
 
   def link
     # render plain: params[:path].inspect
