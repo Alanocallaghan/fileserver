@@ -65,6 +65,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'execjs'
 
 gem 'therubyracer'
-group :development do
-  gem "rack-reverse-proxy", require: "rack/reverse_proxy"
-end
+gem 'warden'
+gem 'bcrypt'
+gem "rack-reverse-proxy", require: "rack/reverse_proxy"
+

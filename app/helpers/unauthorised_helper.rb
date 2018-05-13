@@ -1,0 +1,2 @@
+module UnauthorisedHelper
+end

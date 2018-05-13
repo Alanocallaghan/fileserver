@@ -1,13 +1,7 @@
 require 'rack/reverse_proxy'
+require 'warden'
 
 Rails.application.configure do
-
-  # # # Reverse Proxy for development purposes
-  # config.middleware.insert(0, Rack::ReverseProxy) do
-  #   # Redirect all PHP URLs
-  #   reverse_proxy_options preserve_host: true
-  #   reverse_proxy /.*\.php$/, "http://localhost/fileserver/public$1"
-  # end
 
   # Settings specified here will take precedence over those in config/application.rb.
 

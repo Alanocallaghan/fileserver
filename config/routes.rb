@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  # get 'reports/:project/:file', to: "reports#show"
+  get  '/signup',  to: 'users#new'
+  post '/signup',  to: 'users#create'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 
-  resources :reports
+  resources :users
 
-  get 'reports/:project/*path' => 'reports#link', via: :all
+  get 'reports/', to: 'reports#list'
+  get 'reports/:project/', to: 'reports#link'
+  get 'reports/:project/*path', to: 'reports#link'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
