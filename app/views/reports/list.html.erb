@@ -1,3 +1,7 @@
-<%@reports.each do |report| %>
-<%=report.name%>
+<%if !!@reports.length%>
+  <%@reports.each do |report| %>
+    <%=link_to "#{report.name}", report_path(report.name)%>
+  <%end%>
+<%else%>
+<b> No reports available!</b>
 <%end%>

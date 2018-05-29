@@ -1,4 +1,9 @@
 <%= link_to "Sign out", logout_path, method: :delete %>
+<br>
+User:
+<%= @user.username %><br>
+Email: <%= @user.email %> <br>
+<% @reports.each do |report| %>
+<%= link_to "#{report[:name]}", report_path(report[:name])%>
 
-<%= @user.username %>, <%= @user.email %>
-
+<% end %>

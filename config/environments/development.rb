@@ -3,6 +3,22 @@ require 'warden'
 
 Rails.application.configure do
 
+
+
+
+  config.middleware.insert 0, Rack::Session::Cookie, secret: "MY_SECRET"
+
+  config.middleware.insert_after Rack::Session::Cookie, Warden::Manager do |manager|
+
+    manager.default_strategies :authentication_token, :basic_auth
+    # manager.default_strategies :password, :basic
+    manager.failure_app = UnauthorisedController
+  end
+
+
+  config.middleware.use PhpProxy, {ssl_verify_none: true}
+
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

@@ -3,7 +3,7 @@ $(function(){
         type: "GET",
         url: 'test.php',
         success: function(data){
-            document.body.append(data)
+        	$("body").append("<b>" + data + "</b>")
         }
     });
 });

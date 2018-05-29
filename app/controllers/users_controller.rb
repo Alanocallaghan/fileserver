@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def show
     check_user params[:id]
     @user = User.find(params[:id])
+    @reports = User.find(current_user[:id]).reports
   end
 
   def new
